@@ -1,0 +1,10 @@
+<h3>User Lists:</h3>
+<div class="container">
+  <ul *ngFor="let user of userArray">
+    <li style="list-style-type:none">
+      {{ user.username }}
+    </li>
+    <button routerlink= "/user-details" (click)="sendData(user.username)">Show User Details</button>
+  </ul>
+</div>
+<app-user-details (sentData) = "sendData($event)"></app-user-details>
